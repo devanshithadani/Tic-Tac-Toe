@@ -15,6 +15,11 @@ def check_winner():
             #exit game
             root.quit()
 
+#check for draw (if all buttons are filled and there's no winner)
+    if all(button["text"] != "" for button in buttons) and not winner:
+        messagebox.showinfo("Tic Tac Toe", "It's a draw!")
+        root.quit()
+
 def button_click(index):
     global winner
     #if the button is not already clicked and no winner has been declared
